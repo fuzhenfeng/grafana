@@ -1,8 +1,8 @@
 scrape_configs:
   - job_name: 'cbpsp-sensitivelogs'
     scrape_interval: 10s
-    metrics_path: '/examine/prometheus'
+    metrics_path: '/examine/actuator/prometheus'
     static_configs:
-      - targets: [ '47.92.143.35:10086']
+      - targets: [ '172.27.0.1:10086']
         labels:
           application: cbpsp-sensitivelogs

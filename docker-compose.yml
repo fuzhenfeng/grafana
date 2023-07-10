@@ -21,21 +21,20 @@ services:
   prometheus:
     image: prom/prometheus:v2.45.0
     restart: always
-    environment:
-      - TZ=Asia/Shanghai
     volumes:
-    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /etc/localtime:/etc/localtime
     ports:
-    - "9082:9090"
-    - "10087:10087"
+      - "9082:9090"
+      - "10087:10087"
     networks:
       grafana:
 
   grafana:
     image: grafana/grafana:10.0.1
     restart: always
-    environment:
-      - TZ=Asia/Shanghai
+    volumes:
+      - /etc/localtime:/etc/localtime
     depends_on:
       - prometheus
     ports:

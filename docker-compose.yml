@@ -24,7 +24,7 @@ services:
     volumes:
     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
-    - "9081:9081"
+    - "9082:9082"
     networks:
       grafana:
 
@@ -34,7 +34,7 @@ services:
     depends_on:
       - prometheus
     ports:
-      - "3000:3000/tcp"
+      - "9081:9081/tcp"
     networks:
       grafana:
 

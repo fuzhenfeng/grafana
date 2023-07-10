@@ -3,6 +3,6 @@ scrape_configs:
     scrape_interval: 10s
     metrics_path: '/examine/actuator/prometheus'
     static_configs:
-      - targets: [ '172.27.0.1:10086']
+      - targets: [ '172.18.0.1:10086']
         labels:
           application: cbpsp-sensitivelogs

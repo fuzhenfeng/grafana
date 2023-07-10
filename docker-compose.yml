@@ -21,6 +21,8 @@ services:
   prometheus:
     image: prom/prometheus:v2.45.0
     restart: always
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
@@ -32,6 +34,8 @@ services:
   grafana:
     image: grafana/grafana:10.0.1
     restart: always
+    environment:
+      - TZ=Asia/Shanghai
     depends_on:
       - prometheus
     ports:

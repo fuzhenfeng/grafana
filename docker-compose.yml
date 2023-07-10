@@ -25,7 +25,7 @@ services:
       TZ: Asia/Shanghai
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - /etc/localtime:/etc/localtime
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - "9082:9090"
       - "10087:10087"
@@ -38,7 +38,7 @@ services:
     environment:
       TZ: Asia/Shanghai
     volumes:
-      - /etc/localtime:/etc/localtime
+      - /etc/localtime:/etc/localtime:ro
     depends_on:
       - prometheus
     ports:

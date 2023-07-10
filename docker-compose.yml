@@ -19,7 +19,7 @@ version: "3"
 
 services:
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:v2.45.0
     restart: always
     volumes:
     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
@@ -29,7 +29,7 @@ services:
       grafana:
 
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:10.0.1
     restart: always
     depends_on:
       - prometheus

@@ -24,6 +24,7 @@ services:
     volumes:
     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
+    - "9082:9090"
     - "10087:10087"
     networks:
       grafana:
